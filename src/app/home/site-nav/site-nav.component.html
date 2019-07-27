@@ -1,0 +1,26 @@
+<nav class="navbar">
+    <div class="navbar-brand" *ngIf="!isHomeRoute()">
+        <a class="navbar-item" routerLink="/"
+        routerLinkActive="active">
+            <img src="assets/icon.png" alt="PublishToDev logo">
+            <h1 class="title is-4" style="margin-left:1rem;">PublishTo.Dev</h1>
+        </a>
+    </div>
+
+    <div class="navbar-menu">
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <div class="buttons">
+                    <a class="button is-link" [class.is-outlined]="!isActiveRoute('/about')" routerLink="/about"
+                        routerLinkActive="active">About</a>
+                    <a class="button is-link is-outlined" href="https://github.com">
+                        <span class="icon">
+                            <i class="fa fa-github"></i>
+                        </span>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,33 @@
+<section class="section">
+    <div class="container is-center">
+        <table class="table is-striped is-fullwidth" *ngIf="posts && posts.length > 0">
+            <thead>
+                <tr>
+                    <th>Post Title</th>
+                    <th>Scheduled Publish Time</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let post of posts">
+                    <td>{{post.title}}</td>
+                    <td>{{post.pubtime | date:'medium' | amDateFormat: 'dddd, Do MMMM YYYY @ h:mm A (UTC Z)'}}
+                    </td>
+                    <td [ngClass]="post | postStatus | postStatusCss">{{post | postStatus}}</td>
+                    <td>
+                        <button (click)="cancel(post)" *ngIf="!post.ispublished && !post.iscancelled" 
+                            [class.is-loading]="isCancelling && post.id === cancellingPostId"
+                            [attr.disabled]="(isCancelling && post.id !== cancellingPostId) ? true : null"
+                            class="button">Cancel</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div *ngIf="!posts || posts.length < 1">
+            <p class="content is-large has-text-grey-light has-text-centered">
+                Empty! There are no scheduled posts for this API key.
+            </p>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,10 @@
+<div class="modal" [class.is-active]="isVisible">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+        <button (click)="hide()" class="delete is-large" aria-label="close" style="float:right;"></button>
+        <div class="box" style="clear:both;">
+            <p class="content is-medium" [innerHTML]="message">
+            </p>
+        </div>
+    </div>
+</div>

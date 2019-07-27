@@ -1,0 +1,61 @@
+<app-site-nav></app-site-nav>
+<div class="site-content section">
+    <div class="columns is-centered">
+        <div class="column is-half">
+            <h2 class="title is-2">About PublishTo.Dev</h2>
+            <div class="content is-medium">
+                <p>
+                    Wow. You're really interested in this site. Thanks! Since you're here, let me provide some
+                    background and explain how PublishTo.Dev was built.
+                </p>
+                <h3>What is it?</h3>
+                <p>
+                    PublishTo.Dev is a simple tool that enables authors on the developer-focused <a
+                        href="https://dev.to">dev.to</a> site to schedule the publishing of new articles. It leverages
+                    the recently introduced DevTo API to publish a draft article at a specific time. Simply choose a
+                    date and time, and watch your article go live automagically.
+                </p>
+                <p>
+                    Authors use a browser extension (in Google Chrome or Microsoft Edge (Chromium)) to schedule posts
+                    directly on the DevTo site. Once scheduled, authors can use this site to review, edit and cancel
+                    scheduled posts.
+                </p>
+                <h3>How was it built?</h3>
+                <p>
+                    Behind the scenes, PublishTo.Dev uses Azure durable functions and Azure table storage to handle the
+                    scheduling and publishing of posts.
+                </p>
+                <p>
+                    Durable functions provide an efficient, serverless way to handle indeterminately long async
+                    processes...like calling an API to publish a blog post at some future date and time. While the
+                    function is waiting for the next step in the process, it "hibernates." You only pay for
+                    compute time when it is awake and doing something. Really, it's pretty magical once you start to
+                    use it.
+                </p>
+                <p>
+                    When a post is scheduled, the details are saved to Azure table storage and a durable function timer
+                    is set to run at the desired post publish time. When that time arrives, the function wakes up, grabs
+                    the details from Storage and calls the Dev.To API to publish the post.
+                </p>
+                <h3>What technologies are used?</h3>
+                <p>
+                    On the backend, this project uses Azure Functions, Azure Durable Functions, Azure Table Storage and Azure Storage (for static site hosting). All functions are created with TypeScript using Azure JavaScript/Node SDKs.
+                </p>
+                <p>
+                    On the frontend, the browser extension is created using TypeScript and the Chrome Extension format. Everything else is pretty vanilla, except for PureCSS framework for buttons, Picker calendar component and the Moment/Moment Timezone libraries..
+                </p>
+                <p>
+                    This site is built using the Angular CLI and Bulma CSS framework, along with a handful of Angular plugins.
+                </p>
+                <h3>Trouble? Suggestions?</h3>
+                <p>
+                    If you love this tool, my name is Todd Anglin and you can email your feedback to: todd.anglin@microsoft.com.
+                </p>
+                <p>
+                    If you hate this tool, my name is Burke Holland.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<app-site-footer></app-site-footer>
