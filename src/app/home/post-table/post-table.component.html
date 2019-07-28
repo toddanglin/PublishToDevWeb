@@ -23,7 +23,7 @@
                     </td>
                     <td [ngClass]="post | postStatus | postStatusCss">{{post | postStatus}}</td>
                     <td>
-                        <button (click)="cancel(post)" *ngIf="!post.ispublished && !post.iscancelled" 
+                        <button (click)="cancel(post)" *ngIf="(post | postStatus) == 'Pending'" 
                             [class.is-loading]="isCancelling && post.id === cancellingPostId"
                             [attr.disabled]="(isCancelling && post.id !== cancellingPostId) ? true : null"
                             class="button">Cancel</button>
