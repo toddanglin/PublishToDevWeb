@@ -12,22 +12,24 @@
                 <p>
                     PublishTo.Dev is a simple tool that enables authors on the developer-focused <a
                         href="https://dev.to">dev.to</a> site to schedule the publishing of new articles. It leverages
-                    the recently introduced DevTo API to publish a draft article at a specific time. Simply choose a
-                    date and time, and watch your article go live automagically.
+                    the recently introduced <a href="https://dev.to/api">DevTo API</a> to publish a draft article at a specific time. 
+                    Simply choose a date and time, and watch your article go live automagically.
                 </p>
                 <p>
-                    Authors use a browser extension (in Google Chrome or Microsoft Edge (Chromium)) to schedule posts
+                    Authors use a <a href="https://chrome.google.com/webstore/detail/bohbnpnialpdpgnibbddaaoaklmnjoaa">browser extension</a> 
+                    (in Google Chrome or Microsoft Edge (Chromium)) to schedule posts
                     directly on the DevTo site. Once scheduled, authors can use this site to review, edit and cancel
                     scheduled posts.
                 </p>
                 <h3>How was it built?</h3>
                 <p>
-                    Behind the scenes, PublishTo.Dev uses Azure durable functions and Azure table storage to handle the
+                    Behind the scenes, PublishTo.Dev uses <a href="https://cda.ms/10G">Azure durable functions</a> and 
+                    <a href="https://cda.ms/10F">Azure table storage</a> to handle the
                     scheduling and publishing of posts.
                 </p>
                 <p>
                     Durable functions provide an efficient, serverless way to handle indeterminately long async
-                    processes...like calling an API to publish a blog post at some future date and time. While the
+                    processes...<i>like</i> calling an API to publish a blog post at some future date and time. While the
                     function is waiting for the next step in the process, it "hibernates." You only pay for
                     compute time when it is awake and doing something. Really, it's pretty magical once you start to
                     use it.
@@ -39,13 +41,22 @@
                 </p>
                 <h3>What technologies are used?</h3>
                 <p>
-                    On the backend, this project uses Azure Functions, Azure Durable Functions, Azure Table Storage and Azure Storage (for static site hosting). All functions are created with TypeScript using Azure JavaScript/Node SDKs.
+                    On the backend, this project uses <a href="https://cda.ms/10H">Azure Functions</a>, 
+                    <a href="https://cda.ms/10G">Azure Durable Functions</a>, <a href="https://cda.ms/10F">Azure Table Storage</a> 
+                    and <a href="https://cda.ms/10J">Azure Storage</a> (for static site hosting). 
+                    All functions are created with TypeScript using Azure JavaScript/Node SDKs. The source for the functions is 
+                    <a href="https://cda.ms/10K">available on GitHub</a>.
                 </p>
                 <p>
-                    On the frontend, the browser extension is created using TypeScript and the Chrome Extension format. Everything else is pretty vanilla, except for PureCSS framework for buttons, Picker calendar component and the Moment/Moment Timezone libraries..
+                    On the frontend, the browser extension is created using TypeScript and the Chrome Extension format. 
+                    Everything else is pretty vanilla, except for <a href="https://purecss.io/buttons/">PureCSS framework</a> 
+                    for slightly prettier buttons, <a href="https://flatpickr.js.org/">Flatpickr</a> calendar component and the 
+                    <a href="https://momentjs.com/">Moment/Moment Timezone</a> libraries. The extension source is 
+                    <a href="https://cda.ms/10L">available on GitHub.</a>
                 </p>
                 <p>
-                    This site is built using the Angular CLI and Bulma CSS framework, along with a handful of Angular plugins.
+                    This site is built using the Angular CLI and <a href="https://bulma.io/">Bulma CSS</a> framework, 
+                    along with a handful of Angular plugins. The site's source is <a href="https://cda.ms/10M">available on GitHub.</a>
                 </p>
                 <h3>Trouble? Suggestions?</h3>
                 <p>

@@ -18,7 +18,7 @@ export class UserApiKeyComponent implements OnInit {
      unpublished drafts directly on the Dev.To site.
      Simply navigate to an unpublished draft preview, click on the PublishTo.Dev plugin and choose a future
       time to publish.</p><p>The browser extension is available for Chrome and Microsoft Edge (Chromium).
-       Get the unpacked extension on GitHub.</p>`,
+       <a href="https://github.com/toddanglin/PublishToDev" target="_blank">Get the unpacked extension on GitHub.</a></p>`,
     `<p>DevTo API access tokens are available from the user accounts settings page on DevTo. A token is required
      for <span class="has-text-weight-bold">PublishTo.Dev</span> to publish posts on your behalf.</p>
      <p><a href="https://dev.to/settings/account" target="_blank">Go to DevTo account settings</a></p>`,
