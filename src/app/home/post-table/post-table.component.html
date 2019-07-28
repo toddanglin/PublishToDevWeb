@@ -11,7 +11,14 @@
             </thead>
             <tbody>
                 <tr *ngFor="let post of posts">
-                    <td>{{post.title}}</td>
+                    <td>
+                        <a *ngIf="post.url" href="{{ post.url }}" target="_blank">
+                        {{post.title}}
+                        </a>
+                        <span *ngIf="!post.url">
+                            {{ post.title }}
+                        </span>
+                    </td>
                     <td>{{post.pubtime | date:'medium' | amDateFormat: 'dddd, Do MMMM YYYY @ h:mm A (UTC Z)'}}
                     </td>
                     <td [ngClass]="post | postStatus | postStatusCss">{{post | postStatus}}</td>
