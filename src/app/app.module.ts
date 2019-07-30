@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MomentModule } from 'ngx-moment';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { Angulartics2Module } from 'angulartics2';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     AppRoutingModule,
     FormsModule,
     MomentModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    Angulartics2Module.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

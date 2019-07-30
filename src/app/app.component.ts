@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Angulartics2GoogleGlobalSiteTag } from 'angulartics2/gst';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'publishtodevwebng';
+
+  constructor(angulartics: Angulartics2GoogleGlobalSiteTag) {
+    angulartics.startTracking();
+  }
 }
